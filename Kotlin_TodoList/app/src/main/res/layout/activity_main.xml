@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <EditText
+                android:id="@+id/edit_todo"
+                android:hint="Todo List"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/btn_add"
+                android:text="+"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+    </LinearLayout>
+
+    <ListView
+            android:id="@+id/list_todo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+</LinearLayout>
