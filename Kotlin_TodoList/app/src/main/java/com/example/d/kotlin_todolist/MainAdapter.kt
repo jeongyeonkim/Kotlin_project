@@ -23,6 +23,10 @@ class MainAdapter(context: Context, item: ArrayList<String>) : BaseAdapter(){
             viewHolder.Button = view.findViewById(R.id.btn_delete)
             view.tag = viewHolder
             viewHolder.textView.text = mItem[position]
+            viewHolder.Button.setOnClickListener {
+                mItem.removeAt(position)
+                notifyDataSetChanged()
+            }
             return view
         }else{
             viewHolder = view.tag as ViewHolder
