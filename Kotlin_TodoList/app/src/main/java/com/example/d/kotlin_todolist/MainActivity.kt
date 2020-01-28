@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         btn_add.setOnClickListener {
             item.add(edit_todo.text.toString())
             todo.adapter = MainAdapter(this, item)
+            edit_todo.setText("")
         }
     }
 }

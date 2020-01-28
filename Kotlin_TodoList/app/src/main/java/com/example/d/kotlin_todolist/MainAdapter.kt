@@ -1,12 +1,11 @@
 package com.example.d.kotlin_todolist
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.Button
-import android.widget.TextView
+import android.widget.*
 
 class MainAdapter(context: Context, item: ArrayList<String>) : BaseAdapter(){
     private val mContext = context
@@ -27,6 +26,13 @@ class MainAdapter(context: Context, item: ArrayList<String>) : BaseAdapter(){
                 mItem.removeAt(position)
                 notifyDataSetChanged()
             }
+
+            viewHolder.textView.setOnClickListener {
+                val intent = Intent(mContext, ModifyActivity::class.java)
+                intent.putExtra("todoText",viewHolder.textView.text.toString())
+                mContext.startActivity(intent)
+            }
+
             return view
         }else{
             viewHolder = view.tag as ViewHolder
@@ -44,6 +50,8 @@ class MainAdapter(context: Context, item: ArrayList<String>) : BaseAdapter(){
     inner class ViewHolder{
         lateinit var textView : TextView
         lateinit var Button : Button
+        var checkBox : CheckBox? = null
+
     }
 
 }
